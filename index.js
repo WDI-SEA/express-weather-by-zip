@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
 	res.render('homepage')
 })
 
-app.use('/homepage', require('./controllers/weather.js'))
+//weather in URL references controller weather.js
+app.use('/weather', require('./controllers/weather'))
 
 app.listen(3000)

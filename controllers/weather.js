@@ -1,6 +1,8 @@
 let router = require('express').Router()
+let weather = require('weather-js')
 
 
+// /current is reference to the URL 
 router.get('/current', (req, res) => {
 	//run the zip code through weather-js, and expect a return
 	let zipcode = req.query.zip
@@ -8,6 +10,7 @@ router.get('/current', (req, res) => {
 		if (err) {
 			console.log(err)
 		}
+		//This 'current' is the .ejs file
 		res.render('current', {location: result[0].location.name,
 		 zipcode: result[0].location.zipcode,
 		 temp: result[0].current.temperature})	
