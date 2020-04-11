@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="/style.css">
+
 	<title>Weather!</title>
 </head>
 <body>
+	<div class="head">
+	<div class="container">
 	<h1><%= location %></h1>
 	<h3><%= zipcode %></h3>
-	<h3><%= temp %> F</h3>
+	<h3>Current Temp <%= temp %> F</h3>
+	</div>
+	</div>
+
+	<div class="card">
+	<div class="container">
+		<p><%= day1Day %> <%= day1Date %></p>
+		<p>Low: <%= day1L %></p>
+		<p>High: <%= day1H %></p>
+		<p><%= day1Text %></p>
+		<p>Chance of rain: <%= day1Precip %>%</p>
+	</div>
+	</div>
+
+	<div class="card">
+	<div class="container">
+		<p><%= day2Day %> <%= day2Date %></p>
+		<p>Low: <%= day2L %></p>
+		<p>High: <%= day2H %></p>
+		<p><%= day2Text %></p>
+		<p>Chance of rain: <%= day2Precip %>%</p>
+	</div>
+	</div>
+
+	<div class="card">
+	<div class="container">	
+		<p><%= day3Day %> <%= day3Date %></p>
+		<p>Low: <%= day3L %></p>
+		<p>High: <%= day3H %></p>
+		<p><%= day3Text %></p>
+		<p>Chance of rain: <%= day3Precip %>%</p>
+	</div>
+	</div>
+
+	<div class="card">
+	<div class="container">	
+		<p><%= day4Day %> <%= day4Date %></p>
+		<p>Low: <%= day4L %></p>
+		<p>High: <%= day4H %></p>
+		<p><%= day4Text %></p>
+		<p>Chance of rain: <%= day4Precip %>%</p>
+	</div>
+	</div>
+
+	<div class="card">
+	<div class="container">
+		<p><%= day5Day %> <%= day5Date %></p>
+		<p>Low: <%= day5L %></p>
+		<p>High: <%= day5H %></p>
+		<p><%= day5Text %></p>
+		<p>Chance of rain: <%= day5Precip %>%</p>
+	</div>
+	</div>
+
 
 </body>
 </html>
