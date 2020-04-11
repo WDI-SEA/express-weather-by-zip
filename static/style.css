@@ -10,20 +10,21 @@ body {
   border-radius: 20px;
   background-color: teal;
   color: white;
-  width: 200px;
+  width: 150px;
   float: left;
-  margin: 12px 12px;
+  margin: 10px 10px;
+  font-size: 10px;
+  text-align: center;
 }
 
-/* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 12px 22px 0 rgba(0,0,0,0.2);
 }
 
-/* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
-  margin: 20px 20px 20px 20px;
+  margin: 20px 0px;
+text-align: center;
 }
 
 .head {
