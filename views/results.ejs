@@ -25,35 +25,23 @@
                     <ul>
                         <li>
                             <%=fore.skytextday  %> 
-                              <% console.log('skycodeday',fore.skycodeday)%> 
-                             <%   if(fore.skycodeday == 4){ %>
-                                <i class ="size">&#127785;</i>  
-                                <% } %>
-                            <%   if(fore.skycodeday == 26){ %>
-                            <i id ="cloudy" class="fas fa-cloud"> </i>  
-                            <% } %>
-                            
-                            <% if(fore.skycodeday ==34 || fore.skycodeday==29) {%> 
-                                <i class="size">&#127780;</i> 
-                                <% } %>
-                            <% if(fore.skycodeday ==30 || fore.skycodeday==28 || fore.skycodeday==27 ) {%> 
+                                <% if(fore.skycodeday == 4){ %>
+                                    <i class ="size">&#127785;</i>  
+                                <% } else if(fore.skycodeday == 26){ %>
+                                    <i id ="cloudy" class="fas fa-cloud"> </i>  
+                                <% } else if(fore.skycodeday ==34 || fore.skycodeday==29) {%> 
+                                    <i class="size">&#127780;</i> 
+                                <% } else if(fore.skycodeday ==30 || fore.skycodeday==28 || fore.skycodeday==27 ) {%> 
                                     <i class="size">&#127781;</i> 
-                                <% } %>
-                            
-                            <% if(fore.skycodeday ==32) {%> 
-                            <i class="size">&#127774;</i> 
-                            <% } %>
-                            <% if(fore.skycodeday ==31) {%> 
-                                <i id="clear" class='far fa-sun'></i>
-                                <% } %>
-
-                            <% if(fore.skycodeday ==9 || fore.skycodeday ==11) {%> 
-                                <i class="size">&#127783;</i> 
-                                <% } %>
-                            <% if(fore.skycodeday ==16) {%> 
+                                <% } else if(fore.skycodeday ==32) {%> 
+                                     <i class="size">&#127774;</i> 
+                                <% } else if(fore.skycodeday ==31) {%> 
+                                     <i id="clear" class='far fa-sun'></i>
+                                <% } else if(fore.skycodeday ==9 || fore.skycodeday ==11) {%> 
+                                     <i class="size">&#127783;</i> 
+                                <% } else if(fore.skycodeday ==16) {%> 
                                     <i id="snow" class='far fa-snowflake'></i>
-                            <% } %>    
-                            
+                                <% } %>  
                         </li>  
                         <li>
                             High: <%=fore.high  %> &deg;F
@@ -61,11 +49,20 @@
                         <li>
                             Low: <%= fore.low  %> &deg;F
                         </li>   
+                        <li>
+                            Precipitation:
+                            <% if (fore.precip) { %>
+                                 <%= fore.precip %>%
+                            <%  } else { %>
+                                N/A
+                            <% } %>     
+                            
+                        </li>
                         
                     </ul> 
                 </li> 
             </ul>
-        <% }); %>
+        <% }) %>
         </div>
     </div>
 
