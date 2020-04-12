@@ -6,13 +6,14 @@
     <div class="col">
         <div class="card blue-grey darken-1 horizontal">
             <div class="reducedPadding card-content white-text">
-                <span class="largeTitle"><%= today.day %>, <%=dates[1][1]+' '+dates[1][2]%></span>
+                <span class="largeTitle"><%= forecast[1].day %>,</span>
+                <p id="curTime" class="cardSubtitle"><%= moment().format("MMM Do") %></p>
                 <div>
-                    <p class="high temperatures"> F <%= today.high %>&deg </p>
-                    <p class="low temperatures"> <%= today.low %>&deg </p>
+                    <p class="high temperatures"> F <%= forecast[1].high %>&deg </p>
+                    <p class="low temperatures"> <%= forecast[1].low %>&deg </p>
                 </div>
                 <p>Currently: <%= result[0].current.temperature%>&deg </p>
-                <p> Precip: <%= today.precip%>% </p>
+                <p> Precip: <%= forecast[1].precip%>% </p>
             </div>
             <div class="card-stacked">
                 <div class="reducedPadding card-content">
@@ -23,58 +24,24 @@
     </div>
 </div>
 <div class="row">
-    <div class="col">
-        <div class="card blue-grey darken-1 horizontal">
-            <div class="reducedPadding card-content white-text">
-                <span class="cardTitle"><%= tomorrow.day %>,</span>
-                <p class="cardSubtitle"><%=dates[2][1]+' '+dates[2][2]%></p>
-                <div>
-                    <p class="high temperatures"> F <%= tomorrow.high %>&deg </p>
-                    <p class="low temperatures"> <%= tomorrow.low %>&deg </p>
+      <% for (var i=2; i<=4; i++) { %>
+        <div class="col">
+            <div class="card blue-grey darken-1 horizontal">
+                <div class="reducedPadding card-content white-text">
+                    <span class="cardTitle"><%= forecast[i].day %>,</span>
+                    <p class="cardSubtitle"><%=moment().add(i-1, 'days').format("MMM Do")%></p>
+                    <div>
+                        <p class="high temperatures"> F <%= forecast[i].high %>&deg </p>
+                        <p class="low temperatures"> <%= forecast[i].low %>&deg </p>
+                    </div>
+                    <p> Precip: <%= forecast[i].precip%>% </p>
                 </div>
-                <p> Precip: <%= tomorrow.precip%>% </p>
-            </div>
-            <div class="card-stacked">
-                <div class="card-content reducedPadding">
-                    <p class="iconOther"> <%= icons[2] %></p>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card blue-grey darken-1 horizontal">
-            <div class="reducedPadding card-content white-text">
-                <span class="cardTitle"><%= dayAfter.day %>,</span>
-                <p class="cardSubtitle"><%=dates[3][1]+' '+dates[3][2]%></p>
-                <div>
-                    <p class="high temperatures"> F <%= dayAfter.high %>&deg </p>
-                    <p class="low temperatures"> <%= dayAfter.low %>&deg </p>
-                </div>
-                <p> Precip: <%= dayAfter.precip%>% </p>
-            </div>
-            <div class="card-stacked">
-                <div class="card-content reducedPadding">
-                    <p class="iconOther"> <%= icons[3] %></p>
+                <div class="card-stacked">
+                    <div class="card-content reducedPadding">
+                        <p class="iconOther"> <%= icons[i] %></p>
+                    </div>
                 </div>
             </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card blue-grey darken-1 horizontal">
-            <div class="reducedPadding card-content white-text">
-                <span class="cardTitle"><%= lastDay.day %>,</span>
-                <p class="cardSubtitle"><%=dates[4][1]+' '+dates[4][2]%></p>
-                <div>
-                    <p class="high temperatures"> F <%= lastDay.high %>&deg </p>
-                    <p class="low temperatures"> <%= lastDay.low %>&deg </p>
-                </div>
-                <p> Precip: <%= lastDay.precip%>% </p>
-            </div>
-            <div class="card-stacked">
-                <div class="card-content reducedPadding">
-                    <p class="iconOther"> <%= icons[4] %></p>
-                </div>
-            </div>
-        </div>
-      </div>
+          </div>
+      <% } %>
   </div>
