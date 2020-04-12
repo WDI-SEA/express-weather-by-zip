@@ -13,6 +13,11 @@ h2 {
 	text-decoration: underline;
 }
 
+form {
+	margin: 15px;
+	padding: 15px;
+}
+
 .location {
 	text-decoration: underline;
 }
