@@ -22,7 +22,7 @@ app.get('/weather', (req,res) => {
         if(err) {console.log(err)}
         // Properly display the date
         var dates = []
-        var imageURLs = []
+        var icons = []
         result[0].forecast.forEach(day => {
             var date = day.date.split("-")
             switch (date[1]) {
@@ -41,15 +41,22 @@ app.get('/weather', (req,res) => {
                 default: console.log("Houston, we have a problem");
             }
             dates.push(date)
-            //imageURLs.push("http://blob.weather.microsoft.com/static/weather4/en-us/law/"+day.skycodeday+".gif")
+            // Add the icons that will be displayed
+            var weather = day.skytextday;
+            if (weather === "Sunny") {icons.push("☀️")}
+            else if (weather==="Partly Sunny"||weather==="Mostly Cloudy") {icons.push("🌥")}
+            else if (weather==="Partly Cloudy"||weather==="Mostly Sunny") {icons.push("🌤")}
+            else if (weather === "Cloudy") {icons.push("☁️")}
+            else {icons.push("🌟")}
         })
         // Display: High/Low, Day, Date, Description, % Precipitation
             // .name, .zipcode
-            // http://blob.weather.microsoft.com/static/weather4/en-us/law/[[[SKYCODE]]].gif
             // .high, .low, .day, .date, .skycodeday, .precip
+        console.log(result[0].current)
         res.render('result', {
             result: result,
             dates: dates,
+            icons: icons,
             location: result[0].location,
             today: result[0].forecast[1],
             tomorrow: result[0].forecast[2],

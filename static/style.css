@@ -1,13 +1,26 @@
+html {
+    height: 100%;
+}
 body {
+    background: linear-gradient(deepskyblue, grey);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    min-width: 675px;
 }
 img {
     width: 200%;
     height: 200%;
 }
-
+form {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+}
+input {
+    text-align: center;
+}
 #locationName {
     font-size: 40px;
 }
@@ -15,14 +28,35 @@ img {
     font-size: 30px;
     padding-left: 15px;
 }
-
+#searchScreen {
+    text-align: center;
+}
+.largeTitle {
+    font-size: 30px;
+}
+.cardTitle {
+    font-size: 22px;
+}
+.cardSubtitle {
+    padding-bottom: 10px;
+}
 .temperatures {
     display: inline;
 }
 .high {
-    font-size: 20px;
+    font-size: 16px;
     padding-top: 0px;
 }
 .low {
-    font-size: 15px;
+    font-size: 10px;
+}
+.card .reducedPadding {
+    padding: 12px;
+}
+
+.iconCurrent {
+    font-size: 75px;
+}
+.iconOther {
+    font-size: 50px;
 }
