@@ -27,77 +27,117 @@
             <% for (var i = 0; i < w.forecast.length;  i++ ) { %>
                 <div class='bingo'>
                     <div class='divcast'>
-                        <p id='pcast'> 
                         <% if (w.forecast[i].skytextday === 'Sunny') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
-                        🌞
+                            <%= w.forecast[i].day %>
                         </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
+                            🌞
+                        </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>% </p>
+                        <p id='pcast'> Sunny </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'> 
                         <% } else if (w.forecast[i].skytextday = 'Partly Sunny') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
+                            <%= w.forecast[i].day %>
+                        </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
                         🌥
                         </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>%</p>
+                        <p id='pcast'> Partly Sunny </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'>  
                         <% } else if (w.forecast[i].skytextday = 'Rain') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
+                            <%= w.forecast[i].day %>
+                        </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
                         🌧
                         </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>% </p>
+                        <p id='pcast'> Rainy </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'>  
                         <% } else if (w.forecast[i].skytextday = 'Cloudy') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
+                            <%= w.forecast[i].day %>
+                        </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
                         ☁️
                         </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>%</p>
+                        <p id='pcast'> Cloudy </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'>  
                         <% } else if (w.forecast[i].skytextday = 'Mostly Clear') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
-                        mostly clear 😎 🌞
+                            <%= w.forecast[i].day %>
                         </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
+                        😎 🌞
+                        </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>%</p>
+                        <p id='pcast'> Mostly Clear </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'> 
                         <% } else if (w.forecast[i].skytextday = 'Mostly Sunny') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
+                            <%= w.forecast[i].day %>
+                        </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
                         🌤
                         </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>%</p>
+                        <p id='pcast'> Mostly Sunny </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'>  
                         <% } else if (w.forecast[i].skytextday = 'Mostly Cloudy') { %>
-                        <%= w.forecast[i].day %>
-                        </p>
                         <p id='pcast'> 
-                        Mostly Cloudy 😎 🌥
+                            <%= w.forecast[i].day %>
                         </p>
+                        <p>
+                            <%= w.forecast[i].date %>
+                        </p>
+                        <p id='emoji'> 
+                        😎 🌥
+                        </p>
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>%</p>
+                        <p id='pcast'> Mostly Cloudy </p>
                     </div>
                     <div class='divcast'>
-                        <p id='pcast'>  
                         <% } else if (w.forecast[i].skytextday = 'Clear') { %>
-                        <%= w.forecast[i].day %>
+                            <p id='pcast'> 
+                                <%= w.forecast[i].day %>
+                            </p>
+                            <p>
+                                <%= w.forecast[i].date %>
+                            </p>
+                        <p id='emoji'> 
+                        😎
                         </p>
-                        <p id='pcast'> 
-                        its clear 😎
+                        <p> Chance of Rain: <%= w.forecast[i].precip %>% </p>
+                        <p id='pcast'> Clear </p>
                         <% } %>
-                        </p>
                     </div>
                 </div>
                 <% } %>

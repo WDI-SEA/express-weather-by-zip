@@ -26,6 +26,13 @@ h1, h2 {
 
 }
 #pcast {
+    margin: 0;
     color: white;
     display: block;
+}
+#emoji {
+    margin: 0;
+    height: 75px;
+    width: 150px;
+    font-size: 50px;
 }
