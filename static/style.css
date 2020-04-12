@@ -1,0 +1,28 @@
+body {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+img {
+    width: 200%;
+    height: 200%;
+}
+
+#locationName {
+    font-size: 40px;
+}
+#zip {
+    font-size: 30px;
+    padding-left: 15px;
+}
+
+.temperatures {
+    display: inline;
+}
+.high {
+    font-size: 20px;
+    padding-top: 0px;
+}
+.low {
+    font-size: 15px;
+}

@@ -19,4 +19,4 @@ Take this app and enhance it to give me a 5-day forecast (that's the `forecast` 
 * An icon based on their recommendation (Try [unicode characters](http://xahlee.info/comp/unicode_weather_symbols.html) for basic weather symbols) or you can find an icon set if you wish!
 * Use moment to make your date fancy
 
-
+// EMOJIS: CMD+CTRL+SPACE
