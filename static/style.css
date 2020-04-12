@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    background-color: #7FB5FF;
+    color: #2E415C;
+}
+h1, h2 {
+    color: #2E415C;
+}
+.city {
+    color: white;
+    background-color: #68C0E8;
+    margin: 20px 100px;
+    padding: 0 20px 20px 20px;
+    border: 5px solid #6273D9;
+    border-radius: 10px 10px;
+    box-shadow: 5px 10px 10px #5B80B5;
+}
+.bingo {
+    display: inline;
+}
+.divcast {
+    background-color: #6273D9;
+    border-radius: 10px 10px;
+    display: inline-block;
+    box-shadow: 2px 2px 2px #4F8BAB;
+
+}
+#pcast {
+    color: white;
+    display: block;
+}

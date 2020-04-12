@@ -1,0 +1,106 @@
+<h1>The Weather</h1>
+    <div class='content'>
+        <% weatherNow.forEach(w => {  %>
+            <div class='city'>
+                <h2>
+                    <%= w.location.name %>
+                </h2>
+                <p>
+                    Observation Point: <%= w.current.observationpoint %>
+                </p>
+                <p> 
+                  Current Temperature:  <%= w.current.temperature %> F
+                </p>
+                <p> 
+                    Today's low: <%= w.forecast[1].low %> F
+                </p>
+                <p>
+                    Today's high: <%= w.forecast[1].high %> F
+                </p>
+                <p> 
+                    Tomorrow's low: <%= w.forecast[2].low %> F
+                </p>
+                <p>
+                    Tomorrow's high: <%= w.forecast[2].high %> F
+                </p>
+                <h2>5 Day Forecast</h2>
+            <% for (var i = 0; i < w.forecast.length;  i++ ) { %>
+                <div class='bingo'>
+                    <div class='divcast'>
+                        <p id='pcast'> 
+                        <% if (w.forecast[i].skytextday === 'Sunny') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        🌞
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'> 
+                        <% } else if (w.forecast[i].skytextday = 'Partly Sunny') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        🌥
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'>  
+                        <% } else if (w.forecast[i].skytextday = 'Rain') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        🌧
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'>  
+                        <% } else if (w.forecast[i].skytextday = 'Cloudy') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        ☁️
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'>  
+                        <% } else if (w.forecast[i].skytextday = 'Mostly Clear') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        mostly clear 😎 🌞
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'> 
+                        <% } else if (w.forecast[i].skytextday = 'Mostly Sunny') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        🌤
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'>  
+                        <% } else if (w.forecast[i].skytextday = 'Mostly Cloudy') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        Mostly Cloudy 😎 🌥
+                        </p>
+                    </div>
+                    <div class='divcast'>
+                        <p id='pcast'>  
+                        <% } else if (w.forecast[i].skytextday = 'Clear') { %>
+                        <%= w.forecast[i].day %>
+                        </p>
+                        <p id='pcast'> 
+                        its clear 😎
+                        <% } %>
+                        </p>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+        <% }) %>
+    </div>
