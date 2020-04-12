@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/08119270c6.js"></script>
+    <title>Weather Details And Forecast</title>
+</head>
+<body>
+    <h1 class="results"><%= location %></h1>
+    <h2 class="results"><%= zipcode %></h2>  
+    <h3 class="results"><%= current.day%>, <%= current.date %>,  <%= current.observationtime%></h3>
+    <h3 class="results"><%= current.temperature %> &deg;F,  <%= current.skytext%>  Sky</h3>
+    <a class="results" href="/">
+    <button class="btnResult"> &larr; Back Home  </button>
+    </a>
+    <div class="container">
+        <h2 class="h2results">Five Days Weather Forecast: <%= location %> <%= zipcode %>
+        </h2>
+        <div class="forecast">
+        <% forecast.forEach((fore)=> { %>
+            <ul>
+                <li>  <%= fore.day %>,      <%= fore.date %>   
+                    <ul>
+                        <li>
+                            <%=fore.skytextday  %> 
+                              <% console.log('skycodeday',fore.skycodeday)%> 
+                             <%   if(fore.skycodeday == 4){ %>
+                                <i class ="size">&#127785;</i>  
+                                <% } %>
+                            <%   if(fore.skycodeday == 26){ %>
+                            <i id ="cloudy" class="fas fa-cloud"> </i>  
+                            <% } %>
+                            
+                            <% if(fore.skycodeday ==34 || fore.skycodeday==29) {%> 
+                                <i class="size">&#127780;</i> 
+                                <% } %>
+                            <% if(fore.skycodeday ==30 || fore.skycodeday==28 || fore.skycodeday==27 ) {%> 
+                                    <i class="size">&#127781;</i> 
+                                <% } %>
+                            
+                            <% if(fore.skycodeday ==32) {%> 
+                            <i class="size">&#127774;</i> 
+                            <% } %>
+                            <% if(fore.skycodeday ==31) {%> 
+                                <i id="clear" class='far fa-sun'></i>
+                                <% } %>
+
+                            <% if(fore.skycodeday ==9 || fore.skycodeday ==11) {%> 
+                                <i class="size">&#127783;</i> 
+                                <% } %>
+                            <% if(fore.skycodeday ==16) {%> 
+                                    <i id="snow" class='far fa-snowflake'></i>
+                            <% } %>    
+                            
+                        </li>  
+                        <li>
+                            High: <%=fore.high  %> &deg;F
+                        </li>
+                        <li>
+                            Low: <%= fore.low  %> &deg;F
+                        </li>   
+                        
+                    </ul> 
+                </li> 
+            </ul>
+        <% }); %>
+        </div>
+    </div>
+
+</body>
+</html>

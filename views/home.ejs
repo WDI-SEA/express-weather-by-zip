@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/08119270c6.js"></script>
+    <title>Weather App!</title>
+</head>
+<body>
+    <h1 class="h1Home">Welcome to the Weather App!</h1>
+    <div class="containerHome">
+        <form method="GET" action="/weather">
+            <input class="textHome" type="text" name="zip" placeholder="enter a zip code">
+            <button class="btnResult" type="submit">Get my weather</button>
+        </form>
+    </div>   
+    <div class="msgHome">
+        <%   if(message){ %>
+        <p><%=message  %> </p>
+            <% } %>
+    </div>  
+</body>
+</html>
+
