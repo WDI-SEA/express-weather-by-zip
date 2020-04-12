@@ -10,7 +10,7 @@ router.get('/current', (req, res) => {
 		if (err) {
 			console.log(err)
 		}
-		//This 'current' is the .ejs file
+		//This 'current' is the current.ejs file
 		res.render('current', {location: result[0].location.name,
 		 zipcode: result[0].location.zipcode,
 		 temp: result[0].current.temperature})	
@@ -19,7 +19,15 @@ router.get('/current', (req, res) => {
 })
 
 router.get('/forecast', (req, res) => {
-	res.render('forecast')
+	let zipcode = req.query.zip
+	weather.find({search: zipcode , degreeType: 'F'}, (err, result) => {
+		if (err) {
+			console.log(err)
+		}
+		//This 'forecast' is the forecast.ejs file
+		console.log(result[0].forecast)
+		res.render('forecast', {forecast: result[0].forecast}) 
+	 })
 })
 
 module.exports = router

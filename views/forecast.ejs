@@ -1,1 +1,17 @@
+
 <h2>Five Day Forecast</h2>
+
+<% forecast.forEach (r => { %>
+	<div class="output">
+		<h2><%= r.day %></h2>
+		<h2>High</h2>
+		<h2><%= r.high %></h2>
+		<h2>Low</h2>	
+		<h2><%= r.low %></h2>
+	</div>
+<% }) %>
+	<a href="/">
+            <button>
+                &larr; Back Home
+            </button>
+        </a>
