@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <h1>Weather Finder</h1>
     <form method="GET" action="/weather">
-        <div>
+        <div id="input-box">
         <label for="zip-code">Zip Code</label>
         <input type="text" name="zip" placeholder="enter a zipcode">
+        <button type="submit">Submit</button>
     </div>
-    <button type="submit">Submit</button>
     </form>
     
 </body>

@@ -19,18 +19,36 @@ app.get('/weather', (req, res) => {
         if(err) {
             console.log(err)
         }
-        let results = JSON.stringify(result, null, 2)
-        console.log(results)
+        // console.log(result)
         res.render('result', {
             location: result[0].location.name,
-            zipcode: result[0].location.zipcode,
+            zip: result[0].location.zipcode,
             temp: result[0].current.temperature,
-            feelsLike: result[0].current.feelslike
+            img: result[0].current.imageUrl,
+            feelslike: result[0].current.feelslike,
+            day: result[0].current.day,
+            skytext: result[0].current.skytext, 
+            date: result[0].current.date,
+            dayOneDay: result[0].forecast[0].day,
+            dayOneDate: result[0].forecast[0].date,
+            dayOneLow: result[0].forecast[0].low,
+            dayOneHigh: result[0].forecast[0].high,
+            dayOneTextDay: result[0].forecast[0].skytextday,
+            dayTwoDay: result[0].forecast[1].day, 
+            dayTwoDate: result[0].forecast[1].date,
+            dayTwoLow: result[0].forecast[1].low,
+            dayTwoHigh: result[0].forecast[1].high,
+            dayTwoTextDay: result[0].forecast[0].skytextday,
+            dayThreeTextDay: result[0].forecast[1].skytextday,
+            dayThreeDay: result[0].forecast[2].day, 
+            dayThreeDate: result[0].forecast[2].date,
+            dayThreeLow: result[0].forecast[2].low,
+            dayThreeHigh: result[0].forecast[2].high,
+            dayThreeTextDay: result[0].forecast[2].skytextday
         })
     })
-    
 })
 
 app.listen(3000, () => {
-    console.log('heller')
+    
 })
