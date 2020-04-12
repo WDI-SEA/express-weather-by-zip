@@ -25,8 +25,8 @@ router.get('/forecast', (req, res) => {
 			console.log(err)
 		}
 		//This 'forecast' is the forecast.ejs file
-		console.log(result[0].forecast)
-		res.render('forecast', {forecast: result[0].forecast}) 
+		res.render('forecast', {location: result[0].location.name, 
+			forecast: result[0].forecast}) 
 	 })
 })
 

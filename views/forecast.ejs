@@ -1,13 +1,22 @@
 
-<h2>Five Day Forecast</h2>
+<h2 class="location">Five Day Forecast</h2>
+<h2 class="location"><%= location %></h2>
 
 <% forecast.forEach (r => { %>
+	<% let shortDate = r.date.substring(5, 10)%>
 	<div class="output">
-		<h2><%= r.day %></h2>
-		<h2>High</h2>
-		<h2><%= r.high %></h2>
-		<h2>Low</h2>	
-		<h2><%= r.low %></h2>
+		<h2><%= r.day %> <%= shortDate%></h2>
+		<h3><%= r.skytextday %></h3>
+		<h3>Predicted High</h3>
+		<p><%= r.high %></p>
+		<h3>Predicted Low</h3>	
+		<p><%= r.low %></p>
+		<h3>% Precip</h3>
+		<% if(r.precip == 0) { %>
+			<p>0%</p>
+		<% } else { %>
+		<p><%= r.precip %>%</p>
+		<% } %>
 	</div>
 <% }) %>
 	<a href="/">
