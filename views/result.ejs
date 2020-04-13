@@ -14,8 +14,8 @@
         <h3> <%= day %></h3>
         <h3><%= moment(date).subtract(10, 'days').calendar() %></h3>
         <h3> <%= skytext %></h3>
-        <h3>Current Temperature: <%= temp %>°</h3>
-        <h3>Feels like: <%= feelslike %>°</h3>
+        <h3>Current Temperature: <%= temp %>°F</h3>
+        <h3>Feels like: <%= feelslike %>°F</h3>
     </div>
     <div id="triday">
         <% forecast.forEach(x => { %>
@@ -36,11 +36,11 @@
                 <li><%= x.day %></li>
                 <li><%= moment(x.date).subtract(10, 'days').calendar() %></li>
                 <li><%= x.skytextday %></li>
-                <li><%= x.high %></li>
-                <li><%= x.low %></li>
+                <li>High: <%= x.high %>°F</li>
+                <li>Low: <%= x.low %>°F</li>
             </div>
         <% }) %>
     </div>
-    <button><a href="/">Back</a></button>
+    <button id="back"><a href="/">Back</a></button>
 </body>
 </html>

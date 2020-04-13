@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    background-color: black;
+    background-color: rgb(53, 51, 51);
+    color: rgb(208, 199, 199);
 }
 
 #input-box {
@@ -8,18 +9,33 @@ body {
     margin: 0 auto;
     padding: 15px 15px;
     background-color: rgb(247, 199, 9);
-    height: 80px;
-    width: 130px;
+    height: 90px;
+    width: 155px;
+    border-radius: 10px;
+}
+#inp {
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+#label {
+    font-size: 20px;
+    color:  rgb(53, 51, 51);
+}
+button {
+    padding: 10px;
+    margin: 5px;
 }
 #current {
-    margin: 0 auto;
-    background-color: rgb(10, 75, 75);
+    margin: 10px auto;
+    background-color: rgb(53, 51, 51);
     border-radius: 15px;
+    padding: 10px;
     height: 100%;
     width: 30%;
 }
 #triday {
-    background-color: rgb(10, 75, 75);
+    background-color: rgb(57, 54, 54);
     border-radius: 15px;
     height: 100%;
     padding: 0;
@@ -28,7 +44,7 @@ body {
 }
 
 h2 {
-    color: rgb(237, 230, 17);
+    color: white;
 }
 h1 {
     color: rgb(128, 126, 126)
@@ -42,14 +58,43 @@ button:hover {
     padding: 5px, 5px;
     margin: 5px;
 }
+.day:hover {
+    background-color: rgb(247, 199, 9);
+    color: rgb(57, 54, 54);
+}
 
 li {
     list-style: none;
     text-align: left;
 }
-
+#mainimg {
+    height: 190px;
+    width: auto;
+}
 img {
     height: 100px;
     width: auto;
     text-align: center;
+}
+
+#back {
+    background-color: rgb(247, 199, 9);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    color: inherit;
+    
+}
+a {
+    text-decoration: none;
+    color: rgb(53, 51, 51);
+
+}
+
+#back:hover {
+    background-color: rgb(53, 51, 51);
+    color: rgb(247, 199, 9);
+}
+a:hover {
+    color: rgb(247, 199, 9);
 }
