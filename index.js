@@ -22,7 +22,7 @@ app.get('/weather', (req, res) => {
             res.render('results', {  location: result[0].location.name,
                                     zipcode: result[0].location.zipcode,
                                     current: result[0].current,
-                                    forecast: result[0].forecast
+                                    forecast: result[0].forecast.slice(1,5)
                                 }) 
         }
         else{
