@@ -1,0 +1,97 @@
+body {
+    font-family: 'Happy Monkey', cursive;
+    color: #8d97b9;
+    
+}
+h1 {
+    color:#19bef5;
+    margin: 0;
+}
+h2 {
+    padding-top: 5px;
+    margin: 0;
+}
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.search-box {
+    margin-top: 20vh;
+    padding: 100px 20px 100px;
+    background-color: whitesmoke;
+    width: 50%
+}
+
+.temp {
+    font-size: 2em;
+    margin: 0;
+}
+
+img {
+    vertical-align: middle;
+    padding: 10px;
+}
+.day {
+    display: inline-block;
+    border: 2px solid #4EC5F1;
+    width: 225px;
+    height: 250px;
+    position: relative;
+}
+.hover {
+    padding-top: 60px;
+    display: none;
+    width: 225px;
+    height: 190px;
+    font-size: 1.5em;
+    
+}
+.day:hover .hover {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(52, 52, 199, 0.9);
+}
+
+.forecast {
+    padding-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+}
+
+.today {
+    background-color: papayawhip;
+    width: 30%;
+    margin: 30px auto 50px;
+    padding: 10px;
+    border: 2px solid papayawhip;
+}
+#search-btn {
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+form {
+    font-size: 1em;
+}
+
+#day-title {
+    font-size: 2em;
+    padding: 10px 5px;
+    color:#19bef5; 
+}
+a, a:active {
+    text-decoration: none;
+    color: #8d97b9;
+}
+a:hover {
+    color:#19bef5; 
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">&larr; Back to search</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <h2>You're looking at the weather for: </h2>
+        <h1><%= location %> <%= zip %></h1>
+        <div class="today">
+            <h2>Currently it is:</h2>
+            <p class="temp"><%= temp %>&deg; F<img src="<%= img %>" alt="weather icon"></p>
+            <p>Feels like: <%= feelslike %> &deg; F with a wind of: <%= winddisplay %></p>
+        </div>
+        <h1>FIVE DAY FORECAST</h1>
+        <div class="forecast">
+            <% forecast.forEach(element => { %>
+            <div class="day">
+                <li id="day-title"><%= element.day %></li>
+                <% if (element.skytextday == 'Sunny') { %>
+                <li><img src="/icons/png/003-sun-1.png" alt="sun"></li>
+                <% } else if ((element.skytextday == 'Clear') || (element.skytextday == 'Mostly Sunny')) { %>
+                <li><img src="/icons/png/001-sun.png" alt="sun"></li>
+                <% } else if ((element.skytextday == 'Partly Sunny')|| (element.skytextday == 'Partly Cloudy')) { %>
+                <li><img src="/icons/png/007-cloudy.png" alt="partly sun"></li>
+                <% } else if ((element.skytextday == 'Rain Showers') || (element.skytextday == 'Light Rain') || (element.skytextday == 'Rain')) {%>
+                <li><img src="/icons/png/008-rainy.png" alt="rain showers"></li>
+                <% } else if ((element.skytextday == 'Cloudy') || (element.skytextday == 'Mostly Cloudy')) {%>
+                <li><img src="/icons/png/cloud.png" alt="cloudy"></li>
+                <% } else if (element.skytextday == 'Snow'){ %>
+                <li><img src="/icons/png/005-snowy.png" alt="snow"></li>
+                <% } %>
+                <li><%= element.skytextday %></li>
+                <div class="hover">
+                    <li> <%= moment(element.date).format(shortDateFormat) %></li>
+                    <li>Low: <%= element.low %>&deg; F</li>
+                    <li>High: <%= element.high %>&deg; F</li>
+                    <li>Precip: <%= element.precip %>%</li>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
