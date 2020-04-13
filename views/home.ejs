@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css" rel="stylesheet"> 
     <title>Weather</title>
 </head>
 <body class="home">
@@ -12,7 +13,12 @@
         <h1>Weather Find</h1>
         <p>A simple tool to help you find the current weather and a 5 day forecast anywhere in the world. To find the weather, enter a location (ex: San Francisco, CA) or a ZIP code.</p>
         <form method="GET" action="/weather">
-            <input type="text" name="zip" placeholder="Enter a ZIP code or location">
+            <input type="text" name="zip" minlength="4" placeholder="Enter a Location">
+        
+            <button type="submit">Search Weather</button>
+        </form>
+        <form method="GET" action="/weather:zipcode">
+            <input type="text" name="zip" minlength="5" maxlength="5" placeholder="Enter a ZIP Code (US Only)">
         
             <button type="submit">Search Weather</button>
         </form>

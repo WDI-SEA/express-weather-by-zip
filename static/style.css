@@ -1,6 +1,8 @@
+@import 'https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css';
+
 body {
     text-shadow: 0px 0px 10px black;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif; 
     color: white;
     min-width: 900px;
     font-weight: 500;
@@ -9,17 +11,20 @@ body {
 
 body h1 {
     font-size: 42px;
+    font-family: 'rawline', sans-serif;
+
 }
 
 .home {
     background: url('https://shorebread.com/wp-content/uploads/2013/08/purple-blue-and-orange-sunset_75664102.jpg');
     background-repeat: no-repeat;
-    background-size: 100%, 100%;
+    background-size: cover;
     min-width: 1100px;
 }
 
 .home h1 {
     font-size: 50px;
+    text-align: center;
 }
 
 .home p {
@@ -27,18 +32,22 @@ body h1 {
     
 }
 
+.home form {
+    margin: 0px auto;
+}
+
 .home input, button {
     font-size: 18px;
     border-radius: 5px;
     border: black;
+    margin: 5px 2px 5px 2px;
 }
+
 
 .home button {
     background: #00004d;
     color: white;
     padding: 10px;
-    margin: 10px;
-    
 }
 
 .home input {
@@ -58,7 +67,7 @@ body h1 {
 }
 
 .container {
-    width: 600px;
+    width: 500px;
     margin: 60px auto;
     box-shadow: 0px 0px 30px black;
     padding: 20px 40px;
@@ -86,9 +95,9 @@ h1 {
 }
 
 .fiveday {
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     width: 822px;
-    margin: 0px auto;
+    margin: -30px auto 30px auto;
 }
 
 
@@ -96,7 +105,7 @@ h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 822px;
-    margin: 20px auto;
+    margin: 0px auto;
 }
 
 .forecast div {
@@ -107,7 +116,8 @@ h1 {
 }
 
 .forecast div h1, p {
-    margin: 0px 5px;
+    margin: -5px 5px;
+    font-family: 'rawline', sans-serif;
 }
 
 .forecast div p {
@@ -136,12 +146,13 @@ img {
 .temp {
     font-size: 120px;
     margin: -30px auto 0px auto;
-    width: 200px;
+    width: 300px;
     padding: 0px;
+    font-family: 'rawline', sans-serif;
 }
 
 .degree {
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .home p {
@@ -169,10 +180,10 @@ img {
 }
 
 .back {
-    margin: 0;
+    margin: 10px 0 0 0;
     background: rgba(0, 0, 0, 0.25);
     color: white;
-    padding: 5px;
+    padding: 8px;
     font-size: 18px;
     border-radius: 5px;
     text-shadow: 0px 0px 10px black;
@@ -180,4 +191,8 @@ img {
 
 button:hover {
     box-shadow: 0px 0px 10px purple;
+}
+
+.hiLow p {
+    display: inline;
 }
