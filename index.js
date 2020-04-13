@@ -1,18 +1,19 @@
+//get npm installs
 let express = require('express');
 let app = express();
 let weather = require('weather-js')
 
 
-
+//use static sheet grab with express
 app.use(express.static('static'))
 //use ejs
 app.set('view engine', 'ejs')
-
+//grab home page url
 app.get('/', (req, res) => {
   res.render('home')
 })
 
-
+// grab weather info and display
 app.get('/weather', (req, res) => {
   //take the req.body.zip and pack into a variable
   // make sure the data is coming from the front end correctls
@@ -24,7 +25,7 @@ app.get('/weather', (req, res) => {
     }
     let results = JSON.stringify(result, null, 2)
     console.log(results)
-
+    //render searched results in this order 
     res.render('result', {location: result[0].location.name,
                           zipcode: result[0].location.zipcode,
                           temp: result[0].current.temperature,
@@ -57,9 +58,9 @@ app.get('/weather', (req, res) => {
     })
   })
 })
-
+//use static sheet
 app.use(express.static('static'))
-
+//set port
 app.listen(3000, () => {
   console.log('listening and cruising')
 });
