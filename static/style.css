@@ -1,49 +1,55 @@
 body {
     text-align: center;
+    background-color: black;
 }
 
 #input-box {
     text-align: center;
     margin: 0 auto;
     padding: 15px 15px;
-    background-color: gray;
+    background-color: rgb(247, 199, 9);
     height: 80px;
     width: 130px;
 }
 #current {
     margin: 0 auto;
-    background-color: rgb(159, 222, 222);
+    background-color: rgb(10, 75, 75);
+    border-radius: 15px;
     height: 100%;
-    width: 150px;
+    width: 30%;
 }
 #triday {
     background-color: rgb(10, 75, 75);
+    border-radius: 15px;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
 }
-#day1 {
-    display: inline-block;
-    background-color: bisque;
-    margin: 10px 10px;
-    padding: 5px;
-}
-#day2 {
-    display: inline-block;
-    background-color: bisque;
-    margin: 10px 10px;
-    padding: 5px;
-}
-#day3 {
-    display: inline-block;
-    background-color: bisque;
-    margin: 10px 10px;
-    padding: 5px;
-}
+
 h2 {
     color: rgb(237, 230, 17);
 }
+h1 {
+    color: rgb(128, 126, 126)
+}
 button:hover {
-    background-color: blue;
+    background-color: rgb(12, 12, 12);
+    color: rgb(252, 252, 252);
+}
+.day {
+    display: inline-block;
+    padding: 5px, 5px;
+    margin: 5px;
 }
 
-#day1:hover {
-    background-color: blue;
+li {
+    list-style: none;
+    text-align: left;
+}
+
+img {
+    height: 100px;
+    width: auto;
+    text-align: center;
 }

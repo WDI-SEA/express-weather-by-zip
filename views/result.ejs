@@ -12,35 +12,35 @@
         <h2><%= location %></h2>
         <!-- <img src="<%= img %>)" > -->
         <h3> <%= day %></h3>
-        <h3><%= date %></h3>
+        <h3><%= moment(date).subtract(10, 'days').calendar() %></h3>
         <h3> <%= skytext %></h3>
         <h3>Current Temperature: <%= temp %>°</h3>
         <h3>Feels like: <%= feelslike %>°</h3>
     </div>
     <div id="triday">
-        <h3>3 Day Forecast</h3>
-        <div id="day1">
-            <h2><%= dayOneDay %></h2>
-            <h3><%= dayOneDate %></h3>
-            <h3><%= dayOneTextDay %></h3>
-            <h3>High: <%= dayOneHigh %>°</h3>
-            <h3>Low: <%= dayOneLow %>°</h3> 
-        </div>
-        <div id="day2">
-            <h2><%= dayTwoDay %></h2>
-            <h3><%= dayTwoDate %></h3>
-            <h3><%= dayTwoTextDay %></h3>
-            <h3>High: <%= dayTwoHigh %>°</h3>
-            <h3>Low: <%= dayTwoLow %>°</h3> 
-        </div>
-        <div id="day3">
-            <h2><%= dayThreeDay %></h2>
-            <h3><%= dayThreeDate %></h3>
-            <h3><%= dayThreeTextDay %></h3>
-            <h3>High: <%= dayThreeHigh %>°</h3>
-            <h3>Low: <%= dayThreeLow %>°</h3> 
-        </div>
+        <% forecast.forEach(x => { %>
+            <div class="day">
+                <% if (x.skytextday == 'Partly Cloudy' || x.skytextday =='Partly Sunny') { %>
+                    <img src="images/partlysun.png">
+                    <% } else if (x.skytextday == 'Rain' || x.skytextday == 'Rain Showers' || x.skytextday == 'Light Rain') { %>
+                        <img src="images/rain.png">
+                    <% } else if (x.skytextday == 'Clear' || x.skytextday == 'Sunny') {%>
+                        <img src="images/sun.png">
+                    <%} else if (x.skytextday == 'Cloudy' || x.skytextday == 'Mostly Cloudy') { %>
+                        <img src="images/clouds.png">
+                    <% } else if (x.skytextday == 'Snow' || x.skytextday == 'Light Snow') { %>
+                    <img src="images/snow.png">
+                    <% } else if (x.skytextday == 'Wind') { %>
+                    <img src="images/wind.png">
+                    <% } %>
+                <li><%= x.day %></li>
+                <li><%= moment(x.date).subtract(10, 'days').calendar() %></li>
+                <li><%= x.skytextday %></li>
+                <li><%= x.high %></li>
+                <li><%= x.low %></li>
+            </div>
+        <% }) %>
     </div>
-    <button>Back</button>
+    <button><a href="/">Back</a></button>
 </body>
 </html>
