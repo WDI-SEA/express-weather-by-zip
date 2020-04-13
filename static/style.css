@@ -1,0 +1,41 @@
+html,
+body {
+    background-color: lightcyan;
+    margin: 10px;
+    padding: 5px;
+}
+
+h1 {
+    color: dodgerblue;
+}
+
+.parent {
+    display: flex;
+    padding: 10px;
+    margin-left: 10px;
+    width: 80vw;
+}
+
+.info {
+   color: red;
+   margin-left: 10px;
+    width :   20vw;
+    padding: 20px;
+    
+}
+
+.imageContainer {
+    color: mediumorchid;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 485px;
+    height: 370px;
+ }
+
+img {
+    object-fit: cover;
+}
+
+h2 {
+    color: orangered;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+
+</head>
+<body>
+    <h1>Local Weather</h1>
+    <p>If you're interested in finding out what the weather will be like today, enter your zip code below</p>
+    <form method="GET" action="/weather">
+        <input type="text" name="zip" placeholder="enter zip code">
+        <button type="submit">Today's weather</button>
+    </form>
+    <p>Let's say you have a few things to do this coming week and you want to make sure that you don't get caught in a downpour of rain or you want to pick a sunny day to drive your convertible—then this option might be right for you. Either way, I make no guarantees what type of weather will bestowed upon you. Drive your convertible at your own risk in Seattle.</p>
+    <form method="GET" action="/forecast">
+        <input type="text" name="zip" placeholder="enter zip code">
+        <button type="submit">Weekly forecast</button>
+    </form>
+</body>
+</html>
