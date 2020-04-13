@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css">
+
+  <title>results</title>
+</head>
+<body>
+  <div>
+  <a href="/">
+            <button>
+                &larr; Back Home
+            </button>
+        </a>
+</div>
+  <h1><%= location %> Today </h1>
+  <h1><%= zipcode %></h1>
+  <h1>F <%= temp %></h1>
+  <div>
+		<h2><%= Day %> <%= Date %></h2>
+		<p>Low: <%= tL %></p>
+		<p>High: <%= tH %></p>
+		<p><%= Text %></p>
+		<p>Chance of rain: <%= Precip %>%</p>
+	</div>
+  <div class="forecast">
+    <h2><%= twoDay %> <%= twoDate %></h2>
+    <p>Low: <%= twotL %></p>
+    <p>High: <%= twotH %></p>
+    <p><%= twoText %></p>
+  </div>
+  <div class="forecast">
+    <h2><%= threeDay %> <%= threeDate %></h2>
+    <p>Low: <%= threetL %></p>
+    <p>High: <%= threetH %></p>
+    <p><%= threeText %></p>
+  </div>
+  <div class="forecast">
+    <h2><%= fourDay %> <%= fourDate %></h2>
+    <p>Low: <%= fourL %></p>
+    <p>High: <%= fourH %></p>
+    <p><%= fourText %></p>
+  </div>
+  <div class="forecast">
+    <h2><%= fiveDay %> <%= fiveDate %></h2>
+    <p>Low: <%= fiveL %></p>
+    <p>High: <%= fiveH %></p>
+    <p><%= fiveText %></p>
+  </div>
+
+
+
+</body>
+</html>
