@@ -1,0 +1,26 @@
+{
+  "name": "express-weather-by-zip",
+  "version": "1.0.0",
+  "description": "![General Assembly Logo](http://i.imgur.com/ke8USTq.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahonore42/express-weather-by-zip.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahonore42/express-weather-by-zip/issues"
+  },
+  "homepage": "https://github.com/ahonore42/express-weather-by-zip#readme",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "weather-js": "^2.0.0"
+  }
+}

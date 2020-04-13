@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Result</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,900&display=swap" rel="stylesheet">
+
+</head>
+<body style="background-image: url('<%= backgroundImage(current.skytext) %>'); background-size: cover">
+    <div class="header">
+    <a href="/">
+        <button class="back">
+            Back to Search
+        </button>
+    </div>
+    </a>
+    <div class="main">
+       
+    <div class="result">
+        
+        <span>
+        <h1>Current weather for <%= location.name %></h1>
+        
+        <div class="date"><p><%= current.day %></p><p><%= current.date %></p></div>
+        </span>
+        <div class="info">
+        
+            <div>
+                <div class="temp"><%= current.temperature %><sup class="degree">° F</sup></div>
+            </div>
+            
+            <div>
+                <div class="weather"><%= current.skytext %><img src="<%= current.imageUrl %>"></div>
+                <div class="text">
+                    <div>
+                        <p>Humidity: <%= current.humidity %>%</p>
+                        <p>Wind: <%= current.winddisplay %></p>
+    
+                    </div>
+
+                    <div>
+                        <p>Feels Like: <%= current.feelslike %>° F</p>
+                        <p>Barometer: <%= current.skycode %> in</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fiveday">
+        <h1>Five Day Forecast</h1>
+        
+        <div class="forecast">
+        <% forecast.forEach (f => { %>
+            <div class="days" style="background-image: url('<%= backgroundImage(f.skytextday) %>'); background-size: cover">
+                <h1><%= f.shortday %></h1>
+                <p><%= f.skytextday %></p>
+                <p>H  <%= f.high %>° F</p>
+                <p>L  <%= f.low %>° F</p>
+                <p>Rain: <%= f.precip %>%</p>
+            </div>
+
+        <% }) %>
+        </div>
+    </div>
+    </div>
+    
+
+    
+
+    
+</body>
+</html>
