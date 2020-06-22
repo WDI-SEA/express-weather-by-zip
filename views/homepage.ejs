@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Instructions</h2>
+    <p>Answer some personal quetstions to get a unique-to-you fourtune that 
+        may or may not have something to do with the weather.
+    </p>
+    <form method="GET" action="/weather">
+        <label for="color">What is your favorite hex code?</label><br>
+        <input type="text" id="color" name="color"><br>
+        <label for="season">What season were you first born in?</label><br>
+        <input list="season" name="season">
+            <datalist id="season">
+                <option value="Spring">
+                <option value="Summer">
+                <option value="Autumn">
+                <option value="Winter">
+            </datalist> <br>
+        <label for="zipcode">What is your zipcode?</label><br>
+        <input type="text" id="color" name="color"><br>
+        <label for="power">What is your superpower?</label><br>
+        <input type="text" id="power" name="power"><br>
+        <input type="submit">
+        
+    </form>
+</body>
+</html>
