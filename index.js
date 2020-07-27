@@ -13,19 +13,23 @@ app.get('/', function(req, res){
 })
 
 app.post('/', function(req, res){
-    weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
+    weather.find({search: req.query.zipcode, degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
        
         console.log(JSON.stringify(result, null, 2));
       });
-    res.render('weather.ejs')
+    res.render('weather')
     console.log("hello");
 })
 
 
 app.get('/weather', function(req, res){
-    res.render('weather.ejs')
+  res.render('weather')
+})
+
+app.get('/weather/:zipcode', function(req, res) {
+  res.render('zipdata')
 })
 
 // let app know which port to listen on
-app.listen(8000);
+app.listen(3000);
