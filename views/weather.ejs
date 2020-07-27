@@ -1,2 +1,19 @@
-<h1>Here's your fourtune: </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune</title>
+    <link rel="stylesheet" href="style.css">
 
+</head>
+<body>
+    <div id="current">
+        <h1>Here's your fortune: </h1>
+        <h2><%= location %></h2>
+        <h3><%= day %></h3>
+        <h3><%= skytext %></h3>
+        <h3>Current Temperature: <%= temp %>°F</h3>
+        <h3>Feels like: <%= feelslike %>°F</h3>
+</body>
+</html>
