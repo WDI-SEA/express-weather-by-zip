@@ -3,9 +3,8 @@
 # A RESTful Express Weather App
 
 ## Objectives
-* Build an Express web app that includes a GET and POST request to get the location of our user, and then return data that we will use when learning about API calls to query for the weather in the users location. 
+* Build an Express web app that requests the location of our user, and then returns weather data about that location.
 * Use a new NPM package, [Weather-JS](https://www.npmjs.com/package/weather-js).
-* Declare/create x1 template for your pages to inherit from, and use in your app. 
 * Use best practices when writing code and in organizing your routes. 
 
 ## Getting Started
@@ -13,21 +12,29 @@
 * Fork and clone this repository.
 * Make "entry point" for your app (`touch index.js`). 
 * Run `npm init -y` to setup our folder. 
-* Install your dependencies (Express, EJS, [Weather-JS](https://www.npmjs.com/package/weather-js)). 
+* Install your dependencies (Express, [Weather-JS](https://www.npmjs.com/package/weather-js)). 
 * Create a `.gitignore` file 
 * Run `git init` to initialize git in folder. 
 * Start writing out Express app in `index.js`.
 
-## Requirements/App Map
+## Requirements
 
-* Index.js file should include the following routes/views:
-  - `/`: homepage that includes some instructions for the user, and a form that includes a text input and a submit button. The text input should query for a zipcode, and the form should then as a post method send the zipcode to your backend for use. This route should take both GET and POST methods. 
-  - `/weather`: a results page that displays the weather in the location given by the user. Display whichever data points from your `Weather-JS` call that you find relevant/interesting. 
-  - `/weather/:zipcode`: a GET route that returns the weather data for whichever zipcode the user passes to route. 
+Index.js file should include the following routes:
 
+- `/`: a GET route:
+  - It sends an HTML document from the backend. 
+  - The HTML document should include a form for the user to submit a zipcode.
+  - When the user submits the form, the submission should trigger the `/weather` GET route.
+- `/weather`: a GET route:
+  - It grabs the zipcode from the form submission.
+  - It uses the `Weather-JS` node package to find weather data for that zipcode.
+  - It sends that data to the client.
+- `/weather/:zipcode`: a GET route:
+  - It grabs the zipcode from URL parameter.
+  - It uses the `Weather-JS` node package to find weather data for that zipcode.
+  - It sends that data to the client.
 ## Bonuses
 
-* Write an if statement that passes one template if the weather is "nice" outside, and another if it is not. You get to decide what constitutes "nice" in this case!
 * Write a function that queries a random zipcode for the weather, and returns the `/weather/:zipcode` route with the result. 
 
 ---
