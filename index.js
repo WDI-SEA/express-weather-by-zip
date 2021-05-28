@@ -30,9 +30,9 @@ app.get('/weather', (req, res) => {
             // weather/:zipcode route:
             
             app.get('/weather/:zipcode', (req, res) => {
-                const zipcode = weather.find()
+                const zipcode = weather.find(zipcode.data)
                 
-                res.send(`${x / y}`)
+                res.send(`${zipcode.data}`)
             })
 
 
