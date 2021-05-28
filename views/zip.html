@@ -12,17 +12,13 @@
     <form action ="/weather" method="get">
         <input type="number" name="zip" id="ranZipBox">
         <input type="submit" value="submit">
-        <button onclick="randomizer()" id='random'>Random Zip</button>
     </form>
-    <!-- <form>
-    <form action="/randomzip/*" method="get">
-        <input type="number" id="ranZipBox">
-        <input type="submit" name="rZip" value="submit">
-    </form> -->
+    <form action="/weather/:zipcode" method="get">
+        <button onclick="randomizer()" name="zip" id='random'>Random Zip</button>
+    </form>
 </body>
 
 <script>
-
     function randomizer () {
          let ranZip = Math.floor(Math.random() * (99999 - 00001) + 00001)
         document.getElementById('ranZipBox').value = ranZip
