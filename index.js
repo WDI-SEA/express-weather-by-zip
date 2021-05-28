@@ -15,30 +15,33 @@ app.get("/weather", (req, res) => {
         weather.find({search: zipcode, degreeType: "F"}, function (err, result) {
         if(err) log(err)
 
-        let city = result[0].location.name
-        let currentTemp = result[0].current.temperature
-        let skyText = result[0].current.skytext
-        let currentDate = result[0].current.date
-        let windDisplay = result[0].current.winddisplay
-        
-        res.send(result)
-        log(result[0].current.winddisplay)
-        // const formatWeather = ([results]) => {
-        //     res.send()
-        // }
+            let city = result[0].location.name
+            let currentTemp = result[0].current.temperature
+            let skyText = result[0].current.skytext
+            let currentDate = result[0].current.date
+            let windDisplay = result[0].current.winddisplay
 
-        // log(JSON.stringify(result, null, 2).location)
+            let weatherData = {
+                city, currentTemp, skyText, currentDate, windDisplay
+            }
+        
+            // res.send(weatherData)
+        res.send(`
+        <h1>${city}</h1>
+        <ul>
+            <li>${currentTemp}°F</li>
+            <li>${skyText}</li>
+            <li>${currentDate}</li>
+            <li>${windDisplay}</li>
+        </ul>
+        `)
+        // res.json(`${city} | ${currentTemp}°F | ${skyText} | ${currentDate} | ${windDisplay}`)
+        // log(city)
     })
 })
 
 app.listen(PORT, () => {
     log(`The port level! IT'S OVER 9000!!`)
 })
-
-// weather.find({search: "78741", degreeType: "F"}, function (err, result) {
-//     if(err) log(err)
-    
-//     log(JSON.stringify(result, null, 2))
-// })
 
 // http://localhost:9001/weather?zipcode=78724
