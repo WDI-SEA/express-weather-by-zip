@@ -11,10 +11,23 @@ app.get("/", (req, res) => {
 
 app.get("/weather", (req, res) => {
     let zipcode = req.query.zipcode
+
         weather.find({search: zipcode, degreeType: "F"}, function (err, result) {
         if(err) log(err)
+
+        let city = result[0].location.name
+        let currentTemp = result[0].current.temperature
+        let skyText = result[0].current.skytext
+        let currentDate = result[0].current.date
+        let windDisplay = result[0].current.winddisplay
         
-        res.send(JSON.stringify(result, null, 2))
+        res.send(result)
+        log(result[0].current.winddisplay)
+        // const formatWeather = ([results]) => {
+        //     res.send()
+        // }
+
+        // log(JSON.stringify(result, null, 2).location)
     })
 })
 
