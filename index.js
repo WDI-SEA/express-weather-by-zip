@@ -1,7 +1,11 @@
 const express = require("express")
+const dayjs = require('dayjs')
 const weather = require("weather-js")
 const app = express()
 const PORT = 9001
+
+const now = dayjs()
+const dateFormat = 'dddd, MMMM D[,] YYYY'
 
 const log = console.log
 
@@ -18,30 +22,33 @@ app.get("/weather", (req, res) => {
             let city = result[0].location.name
             let currentTemp = result[0].current.temperature
             let skyText = result[0].current.skytext
-            let currentDate = result[0].current.date
             let windDisplay = result[0].current.winddisplay
 
-            let weatherData = {
-                city, currentTemp, skyText, currentDate, windDisplay
-            }
-        
-            // res.send(weatherData)
-        res.send(`
-        <h1>${city}</h1>
-        <ul>
-            <li>${currentTemp}°F</li>
-            <li>${skyText}</li>
-            <li>${currentDate}</li>
-            <li>${windDisplay}</li>
-        </ul>
-        `)
-        // res.json(`${city} | ${currentTemp}°F | ${skyText} | ${currentDate} | ${windDisplay}`)
-        // log(city)
+    res.writeHead(200, {"Content-Type": "text/html"})
+    res.write("<!DOCTYPE html>")
+    res.write("<html>")
+    res.write("<head>")
+    res.write("<style>")
+    res.write("* {text-align: center; font-family: Arial, Helvetica, sans-serif}")
+    res.write("h3 {margin-top: 200px}")
+    res.write("h1 {font-size: 40px}")
+    res.write("</style>")
+    res.write("<title>")
+    res.write("Local Weather Data")
+    res.write("</title>")
+    res.write("</head>")
+    res.write("<body>")
+    res.write(`<h3>${city}</h3>`)
+    res.write(`<p>${skyText}</p>`)
+    res.write(`<h1>${currentTemp} F</h1>`)
+    res.write(`<p>${now.format(dateFormat)}</p>`)
+    res.write(`<p>Wind: ${windDisplay}</p>`)
+    res.write("</body>")
+    res.write("</html>")
+    res.end()
     })
 })
 
 app.listen(PORT, () => {
     log(`The port level! IT'S OVER 9000!!`)
 })
-
-// http://localhost:9001/weather?zipcode=78724
