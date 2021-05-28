@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
         * {text-align: center}
-        #button-box {margin-top: 15px}
+        #button-box, #submit-box {margin: 15px}
     </style>
 </head>
 <body>
@@ -15,6 +15,12 @@
     <form action="/weather" method="get">
         <input type="text" name="zipcode" placeholder="zipcode">
         <div id="button-box">
+            <label for name="celsius">C</label>
+            <input type="radio" name="select" id="celsius">
+            <label for name="fahrenheit">F</label>
+            <input type="radio" name="select" id="fahrenheit">
+        </div>
+        <div id="submit-box">
             <input type="submit" value="submit">
         </div>
     </form>
