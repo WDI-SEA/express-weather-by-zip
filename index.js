@@ -19,8 +19,8 @@ app.get('/weather', (req, res) => {
 
 
 app.get('/weather/:zipcode', (req,res) => {
-    const zipCode = req.params.weather
-    weatherApp.find({search: zipCode, degreeType: 'F'}, function(err, result) {
+    const zip = req.params.weather
+    weatherApp.find({search: zip, degreeType: 'F'}, function(err, result) {
         if(err) console.log(err)
 
         res.send(`${JSON.stringify(result, null, 2)}`)
