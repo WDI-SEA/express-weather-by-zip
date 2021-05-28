@@ -1,9 +1,8 @@
 const express = require('express')
 const weatherJs = require('weather-js')
-const weather = require('weather-js')
-
+var weather = require('weather-js')
 const app = express()
-const weather = weatherJs()
+const path = require('path')
 
             // Home Route:
 app.get('/', (req, res) => {
@@ -13,28 +12,31 @@ app.get('/', (req, res) => {
             // Weather Page
             // grabs zipcode input from submit button
 app.get('/weather', (req, res) => {
-    weather.find({search: '', degreeType: 'F'}, 
-    function(err, result) 
-    { if(err) console.log(err);
-       
-        console.log(JSON.stringify(result, null, 2));
-      });
-
-	const currentWeather = weather(zipcode).param
-	res.send(weatherJs)
-})
+    weather.find({search: req.query.zipcode, degreeType: 'F'}, function(err, result) {
+        if (err) {
+            res.send(err)
+        } else {
+            res.send(result)
+    }
+}  }
+}
+   
             //use zipcode info in Weather-JS for data
 
             //execute data to client
 
             // weather/:zipcode route:
             
-            app.get('/weather/:zipcode', (req, res) => {
-                const zipcode = weather.find(zipcode.data)
-                
-                res.send(`${zipcode.data}`)
-            })
-
+app.get('/weather/:zipcode', (req, res) => {
+    weather.find({search: req.params.zipcode, degreeType: 'F'}, function(err, result) {
+         if (err) {
+             res.send(err)
+         } else {
+            res.send(result)
+         }
+    })
+ })
+            
 
 
 app.listen(8000)

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Tlamatina/express-weather-by-zip#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.7",
     "weather-js": "^2.0.0"
   }
 }
