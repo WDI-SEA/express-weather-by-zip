@@ -17,20 +17,20 @@ app.get('/', (req, res) => {
 
 // /WEATHER -- setup weather rout, take user input from form, input user input into weather-js, send results to client
 app.get('/weather', (req, res) => {
-    let userZip = parseInt(req.query.zipcode)
+    let userZip = (req.query.zipcode)
     weather.find({search: userZip, degreeType: 'F'}, function(err, result) {
         if(err) console.log(err)
-        res.header(`Content-Type`, `application/json`)
+        res.header(`Content-Type`, `application/json`) // for pretty format
         res.send(JSON.stringify(result, null, 2))
     });
 })
 
 // /WEATHER/:ZIPCODE -- same as above but with zipcode params which is entered directly into the URL by user
 app.get('/weather/:zipcode', (req, res) => {
-    let userZip = parseInt(req.params.zipcode)
+    let userZip = (req.params.zipcode)
     weather.find({search: userZip, degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
-        res.header(`Content-Type`, `application/json`)
+        res.header(`Content-Type`, `application/json`) // for pretty format
         res.send(JSON.stringify(result, null, 2));
     });
 })
