@@ -19,8 +19,9 @@ app.get('/', (req, res) => {
 app.get('/weather', (req, res) => {
     let userZip = parseInt(req.query.zipcode)
     weather.find({search: userZip, degreeType: 'F'}, function(err, result) {
-        if(err) console.log(err);
-        res.send(JSON.stringify(result, null, 2));
+        if(err) console.log(err)
+        res.header(`Content-Type`, `application/json`)
+        res.send(JSON.stringify(result, null, 2))
     });
 })
 
@@ -29,6 +30,7 @@ app.get('/weather/:zipcode', (req, res) => {
     let userZip = parseInt(req.params.zipcode)
     weather.find({search: userZip, degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
+        res.header(`Content-Type`, `application/json`)
         res.send(JSON.stringify(result, null, 2));
     });
 })
