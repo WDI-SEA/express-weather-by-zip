@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Weather</title>
-</head>
-<body>
-    <h1>Weather</h1>
-    <form action="/weather" method="get">
-        <label for="zipcode" alt="Zipcode Field"> Enter Desired Zipcode</label>
-        <input type="text" name="zip">
-        <input type="submit" value="submit">
-    </form> 
-</body>
-</html>
+    <head>
+        <title>Weather</title>
+    </head>
+    <body>
+        <h1>Weather</h1>
+        <form action="/weather" method="get">
+            <label for="zipcode" alt="Zipcode Field">Enter Desired Zipcode</label>
+            <input type="text" name="zipcode">
+            <input type="submit" value="submit">
+        </form> 
+        <form action="random", method="get">
+            <input type="submit" value="Random Zip">
+        </form>
+    </body>
+</html> 

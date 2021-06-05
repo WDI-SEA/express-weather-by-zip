@@ -4,34 +4,34 @@ const weather = require('weather-js')
 const app = express()
 const PORT = 8000
 
-// GET for views, weather, and zipcode
+// GET for views
 app.get("/", (req, res) => {
-    let zipcode = req.query.zipcode
-    let display = ""
-
-    weather.find({search: zipcode, degreeType: 'F'}, function(err, result) {
-        if(err) {
-            console.log(err)
-        }
-        display = JSON.stringify(result, null, 2)
-        res.header("Content-Type", "application.json")
-        res.send(`${display}`)
-        console.log(JSON.stringify(result, null, 2))
-    })    
+    res.sendFile(__dirname + '/views/index.html')
 })
 
-app.get('/weather/zipcode', (req, res) => {
-    let zipcode = req.params.zipcode
-    let display = 
-    weather.find({search: zipcode, degreeType: 'F'}, function(err, result) {
+// GET for weather
+app.get('/weather', (req, res) => {
+    weather.find({search: req.query.zipcode, degreeType: 'F'}, (err, result) => {
         if(err) {
             console.log(err)
         }
-        display = JSON.stringify(result, null, 2)
-        res.header("Content-Type", "application.json")
-        res.send(`${display}`)
-        console.log(JSON.stringify(result, null, 2))
-    })    
+        res.send(result)
+    })
+})
+
+// GET for weather in zipcode
+app.get('/weather/:zipcode', (req, res) => {
+    weather.find({search: req.params.zipcode, degreeType: 'F'}, (err, result) => {
+        if(err) {
+            console.log(err)
+        }
+        res.send(result)
+    })
+})
+
+// GET for random weather
+app.get('/random', (req, res) => {
+    res.redirect(`/weather/${Math.ceil(Math.random()*100000)}`)
 })
 
 // App port to listen on
